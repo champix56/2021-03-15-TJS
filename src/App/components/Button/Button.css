@@ -1,14 +1,16 @@
-.button{
+.Button{
     margin:5px 10px;
-    background-color: green;
-    color: white;
-    padding: 5px 8px;
+    /* background-color: green; */
+    /* color: white; */
+    padding: 5px 20px;
     user-select: none;
     border-radius: 7px;
     box-shadow: 10px 10px 25px grey;    
+    width:fit-content;
+    vertical-align: middle;
 }
 
-.button:hover{
+.Button:hover{
     background-color: rgb(0, 36, 0); 
     box-shadow: 10px 10px 15px grey;    
 }
