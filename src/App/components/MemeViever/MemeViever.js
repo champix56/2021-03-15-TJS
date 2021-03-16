@@ -5,7 +5,7 @@ import SvgDrawer from '../SvgDrawer/SvgDrawer';
 
 const MemeViever = (props) => (
   <div className={styles.MemeViever} data-testid="MemeViever">
-  <SvgDrawer meme={props.meme} images={props.images}/>
+  <SvgDrawer />
     {JSON.stringify(props)}
   </div>
 );
