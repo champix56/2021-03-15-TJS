@@ -1,1 +1,7 @@
-.MemeViever {}
+.MemeViever {
+    display: inline-block;
+    height:calc(100vh - 77px);
+    width: 65vw;
+    // border: 1px solid black;
+    margin-left:15px;
+}
