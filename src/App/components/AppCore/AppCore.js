@@ -16,7 +16,8 @@ export default class AppCore extends React.Component {
         x: 20, y: 20,
         fontSize: 15,
         color: '#ACACAC',
-        imageId: 0
+        imageId: 0,
+        image:{}
       },
       images: [ {id:0,url:"futurama1.jpg",w:640,h:426}]
     };
@@ -43,7 +44,7 @@ export default class AppCore extends React.Component {
           }} />
         </div>
         <div className={style.AppCore} test-id="AppCore">
-          {/* <MemeViewer meme={this.state.currentmeme}  images={this.state.images} /> */}
+          <MemeViewer meme={this.state.currentmeme}  images={this.state.images} />
           <MemeEditor onchildstatechange={childState => {
             this.setState({
               currentmeme: {

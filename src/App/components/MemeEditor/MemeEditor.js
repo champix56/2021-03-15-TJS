@@ -28,7 +28,8 @@ const MemeEditor = (props) => {
         <hr />
         <label htmlFor="image"><h2>Image</h2></label><br />
         <select name="image" id="image" value={props.meme.imageId} onChange={(evt) => {
-          props.onchildstatechange({ imageId: evt.target.value })
+          //const img=props.images.find(e=>String(e.id)===evt.target.value);
+          props.onchildstatechange({ imageId: evt.target.value})//,image:img })
         }}  >
          {props.images.map((element,index)=><option key={'option-image-'+index} value={element.id}>{element.url}</option>)}
         </select><hr />
