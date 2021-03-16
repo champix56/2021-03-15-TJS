@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  * @returns component render
  */
 export default function Button(props) {
-    console.log(props);
+    // console.log(props);
     return (
         <div className="Button" style={{    
             ...props.style,
