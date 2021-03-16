@@ -1,0 +1,12 @@
+{
+    "images":[
+        {"id":0,"url":"futurama1.jpg"},
+        {"id":1,"url":"futurama2.png"},
+        {"id":2,"url":"futurama3.png"},
+        {"id":3,"url":"gwenadu.jpg"}
+    ],
+    "memes":[
+        {"id":0,"imageId":0,"titre":"titre","text":"text demo","x":20,"y":20,"fontSize":15,"color":"#ACACAC","image":"img/image1.png"},
+        {"id":1,"imageId":3,"titre":"BZH libre","text":"pour les vacances sortez de la france","x":20,"y":20,"fontSize":15,"color":"#ACACAC","image":"img/gwenadu.jpg"}
+    ]
+}
