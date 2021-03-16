@@ -1,0 +1,11 @@
+.Footer {
+    text-align: center;
+    font-style: italic;
+    height: 15px;
+    user-select: none;
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    left: 0;
+}
+.Footer>*{vertical-align: middle; }
