@@ -7,9 +7,11 @@ function App() {
   
   return (
     <div className="App">
+    {/* <> */}
         <Titre1/>
         <AppCore/>
-        <Footer/>
+        <Footer societe="Desorbaix"/>
+    {/* </> */}
     </div>
   );
 }
