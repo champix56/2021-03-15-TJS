@@ -7,7 +7,16 @@ import Button from '../Button/Button'
  * @returns react dom render 
  */
 const MemeEditor = (props) => {
-  // const [state, setstate] = useState({ titre: 'titre', text: 'text demo', x: 20, y: 20, fontSize: 15, color: '#ACACAC', image: 'img/image1.png' });
+  // const [images, setimages] = useState([]);
+  // useEffect(() => {
+  //  fetch('http://localhost:5629/images')
+  //   .then(f=>f.json())
+  //   .then(o=>{
+  //    setimages(o);
+  //  });
+  // },[]);
+
+  //console.log("cmp form crated")
   return (
     <div className={styles.MemeEditor} data-testid="MemeEditor" style={{ textAlign: 'center' }}>
       <form onSubmit={(evt) => { console.log('form submited', evt) }}>
@@ -18,10 +27,10 @@ const MemeEditor = (props) => {
         }} />
         <hr />
         <label htmlFor="image"><h2>Image</h2></label><br />
-        <select name="image" id="image" value={props.meme.image} onChange={(evt) => {
-          props.onchildstatechange({ image: evt.target.value })
+        <select name="image" id="image" value={props.meme.imageId} onChange={(evt) => {
+          props.onchildstatechange({ imageId: evt.target.value })
         }}  >
-          <option value="img/image1.png">Image 1</option>
+         {props.images.map((element,index)=><option key={'option-image-'+index} value={element.id}>{element.url}</option>)}
         </select><hr />
         <label htmlFor="text"><h2>texte</h2></label><br />
         <input name="text" id="text" type="text" value={props.meme.text} onChange={(evt) => {
@@ -48,13 +57,16 @@ const MemeEditor = (props) => {
         <Button style={{ display: 'inline' }} bgColor="red" onbuttonclicked={(evt => { console.log('reset form clicked') })} value="reset"></Button>
         <Button style={{ display: 'inline' }} bgColor="green" onbuttonclicked={(evt => { console.log('save form clicked') })} value="save"></Button>
       </form>
-      {JSON.stringify(props.meme)}
+      {JSON.stringify(props.meme)}<br/>
+<h2>Images loaded</h2>
+      {JSON.stringify(props.images)}
     </div>
   );
 }
 MemeEditor.propTypes={
   onchildstatechange:PropTypes.func.isRequired,
-  meme:PropTypes.object.isRequired
+  meme:PropTypes.object.isRequired,
+  images:PropTypes.array.isRequired
 }
 MemeEditor.defaultProps={
   onchildstatechange:()=>{},

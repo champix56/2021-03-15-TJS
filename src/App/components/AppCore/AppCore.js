@@ -16,10 +16,22 @@ export default class AppCore extends React.Component {
         x: 20, y: 20,
         fontSize: 15,
         color: '#ACACAC',
-        image: 'img/futurama1.jpg'
+        imageId: 0
       },
-      images: []
+      images: [ {id:0,url:"futurama1.jpg",w:640,h:426}]
     };
+  }
+  /**
+   * fonction de cycle de vie juste apres le montage dom du cmp 
+   * declanché automatiquement par react
+   */
+  componentDidMount(){
+    fetch('http://localhost:5629/images')
+      .then(f=>f.json())
+      .then(o=>{
+        //mise a jours de l'etat de ce composant apres reception async du contenu
+       this.setState({images:o});
+     });
   }
   render() {
     return (
@@ -31,7 +43,7 @@ export default class AppCore extends React.Component {
           }} />
         </div>
         <div className={style.AppCore} test-id="AppCore">
-          <MemeViewer meme={this.state.currentmeme} />
+          {/* <MemeViewer meme={this.state.currentmeme}  images={this.state.images} /> */}
           <MemeEditor onchildstatechange={childState => {
             this.setState({
               currentmeme: {
@@ -39,7 +51,7 @@ export default class AppCore extends React.Component {
                 ...childState
               }
             });
-          }} meme={this.state.currentmeme} />
+          }} meme={this.state.currentmeme} images={this.state.images} />
         </div>
         <div>{JSON.stringify(this.state)}</div>
       </>
