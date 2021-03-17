@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styles from './MemeViever.module.scss';
 import SvgDrawer from '../SvgDrawer/SvgDrawer';
-import { emptyMeme, store } from '../../store/store';
+import { store } from '../../store/store';
 
 const MemeViever = (props) => {
-  const [meme, setmeme] = useState(emptyMeme);
-  const [img, setimg] = useState({ w: 0, h: 0 });
-
+   const [meme, setmeme] = useState(store.getState().currentMeme);
+   const imgTmp=store.getState().images.find(e=>String(store.getState().currentMeme.imageId)===String(e.id))
+   const [img, setimg] = useState(undefined!==imgTmp?imgTmp:{ w: 0, h: 0 });
   useEffect(() => {
     store.subscribe(()=>{
       setmeme(store.getState().currentMeme);

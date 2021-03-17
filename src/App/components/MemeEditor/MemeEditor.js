@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './MemeEditor.module.scss';
 import Button from '../Button/Button'
-import { emptyMeme, store, ACTIONS } from '../../store/store';
+import {  store, ACTIONS } from '../../store/store';
 /**
  * formulaire de meme  
  * @returns react dom render 
  */
 const MemeEditor = (props) => {
-  const [state, setstate] = useState(emptyMeme);
-  const [images, setimages] = useState([]);
+  const [state, setstate] = useState(store.getState().currentMeme);
+  const [images, setimages] = useState(store.getState().images);
   useEffect(() => {
     store.subscribe(() => {
       setimages(store.getState().images)
@@ -55,8 +55,12 @@ const MemeEditor = (props) => {
         <input className={styles.smallNumber} name="fontSize" id="fontSize" type="number" value={state.fontSize} min={0} onChange={(evt) => {
           store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, fontSize: evt.target.value } })
         }} />px<br />
-        <Button style={{ display: 'inline' }} bgColor="red" onbuttonclicked={(evt => { console.log('reset form clicked') })} value="reset"></Button>
-        <Button style={{ display: 'inline' }} bgColor="green" onbuttonclicked={(evt => { console.log('save form clicked') })} value="save"></Button>
+        <Button style={{ display: 'inline' }} bgColor="red" onbuttonclicked={(evt => { 
+           store.dispatch({type:'CLEAN_CURRENT_MEME'});
+         })} value="reset"></Button>
+        <Button style={{ display: 'inline' }} bgColor="green" onbuttonclicked={(evt => { 
+            store.dispatch({type:ACTIONS.ADD_MEME_ASYNC,value:state})
+        console.log('save form clicked') })} value="save"></Button>
       </form>
       {JSON.stringify(props.meme)}<br />
       <h2>Images loaded</h2>

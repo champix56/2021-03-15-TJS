@@ -1,9 +1,11 @@
 .MemeThumbnail {
-    height: 100%;
+    height:100%;
     overflow-y: auto;
 }
 .MemeThumbnail>*{
-    flex:1;
+    display: inline-block;
     width:32%;
+    // max-width:300px;
+    // max-height: 100px;
     margin-left: 1%;
 }

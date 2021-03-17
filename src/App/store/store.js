@@ -17,10 +17,14 @@ const initialState = {
 //fabrication d'une enum en ES5/6
 export const ACTIONS = Object.freeze({
     ADD_MEMES: 'ADD_MEMES',
-    ADD_MEME: 'ADD_MEME',
+    ADD_MEME_ASYNC: 'ADD_MEME_ASYNC',
     ADD_IMAGES: 'ADD_IMAGES',
-    SET_CURRENT_MEME:'SET_CURRENT_MEME'
+    SET_CURRENT_MEME:'SET_CURRENT_MEME',
+    CLEAN_CURRENT_MEME:'CLEAN_CURRENT_MEME'
 });
+const PRIVATE_ACTIONS = Object.freeze({
+    ADD_MEME:'ADD_MEME'
+})
 //acteur sur le state -> gerrer par le store de redux (etape2)
 function reducer(state = initialState, action) {
     console.log(action);
@@ -44,10 +48,23 @@ function reducer(state = initialState, action) {
         case ACTIONS.ADD_IMAGES:return {...state,images:action.values};
         case ACTIONS.ADD_MEMES: return { ...state, memes: action.values };
         //ajout dans les arrays de l'etat
-        case ACTIONS.ADD_MEME: return { ...state, memes: [...state.memes, action.value] };
+        case ACTIONS.ADD_MEME_ASYNC: 
+                fetch(`${ADR_SRV_REST}/memes`,{
+                        method:'POST',
+                        headers:new Headers({'Content-Type':'application/json'}),
+                        body:JSON.stringify(action.value)
+                    }).then(f=>f.json())
+                      .then(o=>{
+                        store.dispatch({type:PRIVATE_ACTIONS.ADD_MEME,value:o});
+
+                    });
+        return state;
+        case PRIVATE_ACTIONS.ADD_MEME: return { ...state, memes: [...state.memes, action.value],currentMeme:emptyMeme };
 
         //mise a jour du meme current en cours d'edition
         case ACTIONS.SET_CURRENT_MEME:return {...state,currentMeme:action.value};
+
+        case ACTIONS.CLEAN_CURRENT_MEME:return{...state,currentMeme:emptyMeme}
         //cas par def. avec retour de l'etat tels qu'il etait car aucune moddif sur l'etat
         default: return state;
     }
