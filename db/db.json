@@ -7,6 +7,6 @@
     ],
     "memes":[
         {"id":0,"imageId":0,"titre":"titre","text":"text demo","x":20,"y":20,"fontSize":15,"color":"#ACACAC"},
-        {"id":1,"imageId":3,"titre":"BZH libre","text":"pour les vacances sortez de la france","x":20,"y":20,"fontSize":15,"color":"#ACACAC"}
+        {"id":1,"imageId":3,"titre":"BZH libre","text":"pour les vacances sortez de la france","x":200,"y":1200,"fontSize":140,"color":"#FFFFFF"}
     ]
 }
