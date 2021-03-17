@@ -26,6 +26,7 @@ const MemeSeeOne = () => {
   return (<>
     {undefined !== meme && undefined !== img ?
       (<div className={styles.MemeSeeOne} data-testid="MemeSeeOne">
+        <h1>{meme.titre}</h1>
         <SvgDrawer meme={meme} img={img} />
       </div>) : null
     }</>)

@@ -1,1 +1,5 @@
-.MemeSeeOne {}
+.MemeSeeOne {
+    height: 100%;
+    text-align: center;
+}
+.MemeSeeOne svg{height: calc(100% - 70px) !important;}

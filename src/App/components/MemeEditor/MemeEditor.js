@@ -44,17 +44,17 @@ const MemeEditor = (props) => {
         <label htmlFor="y"><h2 style={{ display: "inline" }}>y :</h2></label>
         <input className={styles.smallNumber} name="y" id="y" type="number" min={0} value={state.y} onChange={(evt) => {
           store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, y: evt.target.value } })
-        }} /><br />
+        }} /><hr />
+        <br/><h2>Decorations</h2>
         <label htmlFor="color"><h2 style={{ display: "inline" }}>color :</h2></label>
         <input name="color" id="color" type="color" value={state.color} onChange={(evt) => {
           store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, color: evt.target.value } })
 
-        }} /><br />
-
+        }} />
         <label htmlFor="fontSize"><h2 style={{ display: "inline" }}>font-size :</h2></label>
         <input className={styles.smallNumber} name="fontSize" id="fontSize" type="number" value={state.fontSize} min={0} onChange={(evt) => {
           store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, fontSize: evt.target.value } })
-        }} />px<br />
+        }} />px<hr/><br /><br/>
         <Button style={{ display: 'inline' }} bgColor="red" onbuttonclicked={(evt => { 
            store.dispatch({type:'CLEAN_CURRENT_MEME'});
          })} value="reset"></Button>
@@ -62,9 +62,6 @@ const MemeEditor = (props) => {
             store.dispatch({type:ACTIONS.ADD_MEME_ASYNC,value:state})
         console.log('save form clicked') })} value="save"></Button>
       </form>
-      {JSON.stringify(props.meme)}<br />
-      <h2>Images loaded</h2>
-      {JSON.stringify(props.images)}
     </div>
   );
 }

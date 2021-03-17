@@ -1,12 +1,12 @@
 import { createStore } from 'redux';
 const ADR_SRV_REST = "http://localhost:5629";
 export const emptyMeme={
-    titre:'tyuio',
+    titre:'React is easy',
     text:'Le js m\'a tué',
-    x:15,
-    y:35,
+    x:121,
+    y:65,
     color:'#FFFFFF',
-    fontSize:18,
+    fontSize:73,
     imageId:0
 }
 const initialState = {

@@ -31,49 +31,40 @@
       "imageId": 0,
       "titre": "titre",
       "text": "text demo",
-      "x": 20,
-      "y": 20,
-      "fontSize": 15,
-      "color": "#ACACAC"
+      "x": 160,
+      "y": 62,
+      "fontSize": 65,
+      "color": "#FFACA0"
     },
     {
       "id": 1,
       "imageId": 3,
       "titre": "BZH libre",
       "text": "pour les vacances sortez de la france",
-      "x": 20,
-      "y": 1000,
-      "fontSize": 150,
-      "color": "#ACACAC"
+      "x": 300,
+      "y": 1200,
+      "fontSize": 100,
+      "color": "#FFFFFF"
     },
     {
       "id": 2,
       "imageId": 3,
       "titre": "BZH libre2",
       "text": "Oh breizh ma bro",
-      "x": 20,
-      "y": 1000,
-      "fontSize": 150,
-      "color": "#ACACAC"
+      "x": 400,
+      "y": 1200,
+      "fontSize": 170,
+      "color": "#0"
     },
     {
       "id": 3,
       "imageId": 3,
       "titre": "BZH libre3",
       "text": "Menhirs libres",
-      "x": 20,
-      "y": 1000,
+      "x": 500,
+      "y": 1200,
       "fontSize": 150,
-      "color": "#ACACAC"
-    },{
-      "titre": "tyuio",
-      "text": "Le js m'a tuérdcSEZFzeq",
-      "x": 15,
-      "y": 35,
-      "color": "#FFFFFF",
-      "fontSize": 18,
-      "imageId": 0,
-      "id": 7
+      "color": "#00FFAC"
     }
   ]
 }
