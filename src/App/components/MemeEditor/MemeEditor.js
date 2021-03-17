@@ -50,11 +50,26 @@ const MemeEditor = (props) => {
         <input name="color" id="color" type="color" value={state.color} onChange={(evt) => {
           store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, color: evt.target.value } })
 
-        }} />
+        }} /><br/>
         <label htmlFor="fontSize"><h2 style={{ display: "inline" }}>font-size :</h2></label>
         <input className={styles.smallNumber} name="fontSize" id="fontSize" type="number" value={state.fontSize} min={0} onChange={(evt) => {
           store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, fontSize: evt.target.value } })
-        }} />px<hr/><br /><br/>
+        }} />px
+          <br/>
+          <label htmlFor="fontWeight"><h2 style={{ display: "inline" }}>font-weight :</h2></label>
+        <input className={styles.smallNumber} name="fontWeight" id="fontWeight" type="number" value={state.fontWeight} min={100} step={100} max={900} onChange={(evt) => {
+          store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, fontWeight: evt.target.value } })
+        }} /><br/>
+        <input  name="underine" id="underline" type="checkbox" checked={state.underline} onChange={(evt) => {
+          store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, underline: evt.target.checked } })
+        }} />&nbsp;
+        <label htmlFor="underline"><h2 style={{ display: "inline" }}>underline</h2></label>
+        &nbsp;<h2 style={{display:'inline'}}>/</h2>&nbsp;
+        <label htmlFor="italic"><h2 style={{ display: "inline" }}>italic</h2></label>&nbsp;
+        <input  name="italic" id="italic" type="checkbox" checked={state.italic} onChange={(evt) => {
+          store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, italic: evt.target.checked } })
+        }} />
+        <hr/><br /><br/>
         <Button style={{ display: 'inline' }} bgColor="red" onbuttonclicked={(evt => { 
            store.dispatch({type:'CLEAN_CURRENT_MEME'});
          })} value="reset"></Button>

@@ -7,7 +7,10 @@ export const emptyMeme={
     y:65,
     color:'#FFFFFF',
     fontSize:73,
-    imageId:0
+    imageId:0,
+    fontWeight:900,
+    underline:false,
+    italic:false
 }
 const initialState = {
     memes: [],

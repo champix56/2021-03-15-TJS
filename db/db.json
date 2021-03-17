@@ -34,7 +34,10 @@
       "x": 160,
       "y": 62,
       "fontSize": 65,
-      "color": "#FFACA0"
+      "color": "#FFACA0",
+      "fontWeigh":900,
+      "underline":true,
+      "italic":true
     },
     {
       "id": 1,
@@ -44,7 +47,10 @@
       "x": 300,
       "y": 1200,
       "fontSize": 100,
-      "color": "#FFFFFF"
+      "color": "#FFFFFF",
+      "fontWeight":700,
+      "underline":false,
+      "italic":true
     },
     {
       "id": 2,
@@ -54,7 +60,10 @@
       "x": 400,
       "y": 1200,
       "fontSize": 170,
-      "color": "#0"
+      "color": "#0",
+      "fontWeight":900,
+      "underline":false,
+      "italic":false
     },
     {
       "id": 3,
@@ -64,7 +73,10 @@
       "x": 500,
       "y": 1200,
       "fontSize": 150,
-      "color": "#00FFAC"
+      "color": "#00FFAC",
+      "fontWeight":500,
+      "underline":false,
+      "italic":false
     }
   ]
 }
