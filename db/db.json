@@ -7,6 +7,8 @@
     ],
     "memes":[
         {"id":0,"imageId":0,"titre":"titre","text":"text demo","x":20,"y":20,"fontSize":15,"color":"#ACACAC"},
-        {"id":1,"imageId":3,"titre":"BZH libre","text":"pour les vacances sortez de la france","x":20,"y":20,"fontSize":15,"color":"#ACACAC"}
+        {"id":1,"imageId":3,"titre":"BZH libre","text":"pour les vacances sortez de la france","x":20,"y":1000,"fontSize":150,"color":"#ACACAC"},
+        {"id":2,"imageId":3,"titre":"BZH libre2","text":"Oh breizh ma bro","x":20,"y":1000,"fontSize":150,"color":"#ACACAC"},
+        {"id":3,"imageId":3,"titre":"BZH libre3","text":"Menhirs libres","x":20,"y":1000,"fontSize":150,"color":"#ACACAC"}
     ]
 }
