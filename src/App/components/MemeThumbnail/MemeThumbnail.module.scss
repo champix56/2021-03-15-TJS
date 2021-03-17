@@ -1,0 +1,9 @@
+.MemeThumbnail {
+    height: 100%;
+    overflow-y: auto;
+}
+.MemeThumbnail>*{
+    flex:1;
+    width:32%;
+    margin-left: 1%;
+}
