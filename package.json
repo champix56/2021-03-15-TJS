@@ -11,6 +11,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
+    "redux": "^4.0.5",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -18,8 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json":"json-server -p 5629 db/db.json",
-    "runall":"npm run json|npm start"
+    "json": "json-server -p 5629 db/db.json",
+    "runall": "npm run json|npm start"
   },
   "eslintConfig": {
     "extends": [

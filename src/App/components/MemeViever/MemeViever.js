@@ -10,8 +10,4 @@ const MemeViever = (props) => (
   </div>
 );
 
-MemeViever.propTypes = {
-  meme:PropTypes.object.isRequired
-};
-
 export default MemeViever;
