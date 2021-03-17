@@ -29,28 +29,32 @@
     {
       "id": 0,
       "imageId": 0,
-      "titre": "titre",
-      "text": "text demo",
-      "x": 160,
+      "titre": "js closures",
+      "text": "Des closu quoi??",
+      "x": 80,
       "y": 62,
-      "fontSize": 65,
+      "fontSize": 70,
       "color": "#FFACA0",
-      "fontWeigh":900,
-      "underline":true,
-      "italic":true
+      "fontWeigh": 900,
+      "underline": true,
+      "italic": true,
+      "frameSizeX": 50,
+      "frameSizeY": 50
     },
     {
       "id": 1,
       "imageId": 3,
       "titre": "BZH libre",
       "text": "pour les vacances sortez de la france",
-      "x": 300,
+      "x": 200,
       "y": 1200,
       "fontSize": 100,
       "color": "#FFFFFF",
-      "fontWeight":700,
-      "underline":false,
-      "italic":true
+      "fontWeight": 700,
+      "underline": true,
+      "italic": true,
+      "frameSizeX": 0,
+      "frameSizeY": 0
     },
     {
       "id": 2,
@@ -61,9 +65,11 @@
       "y": 1200,
       "fontSize": 170,
       "color": "#0",
-      "fontWeight":900,
-      "underline":false,
-      "italic":false
+      "fontWeight": 900,
+      "underline": false,
+      "italic": true,
+      "frameSizeX": 0,
+      "frameSizeY": 0
     },
     {
       "id": 3,
@@ -74,9 +80,26 @@
       "y": 1200,
       "fontSize": 150,
       "color": "#00FFAC",
-      "fontWeight":500,
-      "underline":false,
-      "italic":false
+      "fontWeight": 500,
+      "underline": false,
+      "italic": false,
+      "frameSizeX": 50,
+      "frameSizeY": 100
+    },
+    {
+      "titre": "React is easy",
+      "text": "Le js m'a tué",
+      "x": 121,
+      "y": "-79",
+      "color": "#573232",
+      "fontSize": 73,
+      "imageId": 0,
+      "fontWeight": 900,
+      "underline": false,
+      "italic": false,
+      "frameSizeX": "112",
+      "frameSizeY": "199",
+      "id": 4
     }
   ]
 }

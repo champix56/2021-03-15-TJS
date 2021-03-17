@@ -37,12 +37,12 @@ const MemeEditor = (props) => {
           store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, text: evt.target.value } })
         }} />
         <br />
-        <label htmlFor="x"><h2 style={{ display: "inline" }}>x :</h2></label><input className={styles.smallNumber} name="x" id="x" type="number" min={0} value={state.x} onChange={(evt) => {
+        <label htmlFor="x"><h2 style={{ display: "inline" }}>x :</h2></label><input className={styles.smallNumber} name="x" id="x" type="number" value={state.x} onChange={(evt) => {
           store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, x: evt.target.value } })
 
         }} />
         <label htmlFor="y"><h2 style={{ display: "inline" }}>y :</h2></label>
-        <input className={styles.smallNumber} name="y" id="y" type="number" min={0} value={state.y} onChange={(evt) => {
+        <input className={styles.smallNumber} name="y" id="y" type="number" value={state.y} onChange={(evt) => {
           store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, y: evt.target.value } })
         }} /><hr />
         <br/><h2>Decorations</h2>
@@ -69,7 +69,16 @@ const MemeEditor = (props) => {
         <input  name="italic" id="italic" type="checkbox" checked={state.italic} onChange={(evt) => {
           store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, italic: evt.target.checked } })
         }} />
-        <hr/><br /><br/>
+        <hr/>
+        <br />
+        <label htmlFor="frameSizeX"><h2 style={{ display: "inline" }}>frame size X :</h2></label>
+        <input className={styles.smallNumber} name="frameSizeX" id="frameSizeX" type="number" value={state.frameSizeX} min={0} onChange={(evt) => {
+          store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, frameSizeX: evt.target.value } })
+        }} />px <label htmlFor="frameSizeY"><h2 style={{ display: "inline" }}>frame size y :</h2></label>
+        <input className={styles.smallNumber} name="frameSizeY" id="frameSizeY" type="number" value={state.frameSizeY} min={0} onChange={(evt) => {
+          store.dispatch({ type: ACTIONS.SET_CURRENT_MEME, value: { ...state, frameSizeY: evt.target.value } })
+        }} />px
+        <br/>
         <Button style={{ display: 'inline' }} bgColor="red" onbuttonclicked={(evt => { 
            store.dispatch({type:'CLEAN_CURRENT_MEME'});
          })} value="reset"></Button>

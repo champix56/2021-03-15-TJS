@@ -10,7 +10,9 @@ export const emptyMeme={
     imageId:0,
     fontWeight:900,
     underline:false,
-    italic:false
+    italic:false,
+    frameSizeX:0,
+    frameSizeY:0
 }
 const initialState = {
     memes: [],
