@@ -5,13 +5,8 @@ import SvgDrawer from '../SvgDrawer/SvgDrawer';
 
 const MemeViever = (props) => (
   <div className={styles.MemeViever} data-testid="MemeViever">
-  <SvgDrawer />
-    {JSON.stringify(props)}
+    <SvgDrawer />
   </div>
 );
-
-MemeViever.propTypes = {
-  meme:PropTypes.object.isRequired
-};
 
 export default MemeViever;

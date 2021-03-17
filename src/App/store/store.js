@@ -1,12 +1,13 @@
 import { createStore } from 'redux';
 const ADR_SRV_REST = "http://localhost:5629";
-const emptyMeme={
-    titre:'',
-    text:'',
-    x:0,
-    y:0,
-    color:'#0',
-    fontSize:0
+export const emptyMeme={
+    titre:'tyuio',
+    text:'Le js m\'a tué',
+    x:15,
+    y:35,
+    color:'#FFFFFF',
+    fontSize:18,
+    imageId:0
 }
 const initialState = {
     memes: [],
@@ -17,7 +18,8 @@ const initialState = {
 export const ACTIONS = Object.freeze({
     ADD_MEMES: 'ADD_MEMES',
     ADD_MEME: 'ADD_MEME',
-    ADD_IMAGES: 'ADD_IMAGES'
+    ADD_IMAGES: 'ADD_IMAGES',
+    SET_CURRENT_MEME:'SET_CURRENT_MEME'
 });
 //acteur sur le state -> gerrer par le store de redux (etape2)
 function reducer(state = initialState, action) {
@@ -43,6 +45,9 @@ function reducer(state = initialState, action) {
         case ACTIONS.ADD_MEMES: return { ...state, memes: action.values };
         //ajout dans les arrays de l'etat
         case ACTIONS.ADD_MEME: return { ...state, memes: [...state.memes, action.value] };
+
+        //mise a jour du meme current en cours d'edition
+        case ACTIONS.SET_CURRENT_MEME:return {...state,currentMeme:action.value};
         //cas par def. avec retour de l'etat tels qu'il etait car aucune moddif sur l'etat
         default: return state;
     }
